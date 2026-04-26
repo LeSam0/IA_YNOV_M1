@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-micro {
+    @apply transition-all duration-300 ease-out will-change-transform;
+  }
+
+  .btn-micro:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-micro:active {
+    transform: translateY(0) scale(0.98);
+  }
+}
+
+body {
+  @apply bg-slate-950 text-slate-100;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(245, 158, 11, 0.12), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.1), transparent 30%);
+}
+
+::selection {
+  @apply bg-amber-500 text-slate-950;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.35);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-micro {
+    transition: none;
+    transform: none !important;
+  }
+}
